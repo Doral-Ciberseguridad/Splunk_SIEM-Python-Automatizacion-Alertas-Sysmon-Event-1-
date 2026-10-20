@@ -44,9 +44,7 @@ sudo nano splunk_automatizar_creacion_alertas.py
   
 - PASSWORD: contraseña del usuario de Splunk.
   
-- EMAIL: correo que recibirá las alertas. 
-  
-(Debes tener configurado previamente el envio de correos por SMTP en los ajustes de tu Splunk Server)
+- EMAIL: correo que recibirá las alertas. (Debes tener configurado previamente el envio de correos por SMTP en los ajustes de tu Splunk Server)
   
 - HOST: dirección del servidor Splunk. Ej.: "localhost"
   
