@@ -81,9 +81,12 @@ Verás como empieza a añadir las alertas a Splunk una por una progresivamente:
 6.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
 Comprueba que las alertas se hayan creado correctamente:
 
-![[Pasted image 20261020220545.png]]
+<img width="1056" height="810" alt="image" src="https://github.com/user-attachments/assets/67c23cd0-303a-4211-a16a-8c646333a43e" />
 
-![[Pasted image 20261020220930.png]]
+<br>
+
+<img width="709" height="719" alt="image" src="https://github.com/user-attachments/assets/af359f89-a0d9-48ba-8543-7ea39bd0dfad" />
+
 
 
 
