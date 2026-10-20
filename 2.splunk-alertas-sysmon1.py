@@ -7,8 +7,8 @@ import splunklib.client as client
 
 
 # Configuro las variables que van a ser usadas por las siguientes funciones de este script
-EMAIL = "adoral296@gmail.com"
-PASSWORD = "3xFd#klO83@v"
+EMAIL = "INTRODUCE_TU_CORREO"
+PASSWORD = "INTRODUCE_TU_CONTRASEÑA_DEL_USUARIO_DE_SPLUNK_SERVER"
 HOST = "localhost"
 PORT = 8089
 USERNAME = "admin"
