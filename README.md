@@ -78,6 +78,8 @@ Verás como empieza a añadir las alertas a Splunk una por una progresivamente:
 <br>
 
 
+<br>
+
 6.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
 Comprueba que las alertas se hayan creado correctamente:
 
