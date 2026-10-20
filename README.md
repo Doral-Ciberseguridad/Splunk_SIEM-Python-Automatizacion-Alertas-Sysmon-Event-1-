@@ -67,9 +67,15 @@ Verás como empieza a añadir las alertas a Splunk una por una progresivamente:
 
 <img width="858" height="670" alt="image" src="https://github.com/user-attachments/assets/bc7d71fe-52f0-4fc0-98a2-31349ab0c042" />
 
+<br>
+
 <img width="898" height="638" alt="image" src="https://github.com/user-attachments/assets/23f298be-23c1-415e-83f9-371a0d979a8b" />
 
+<br>
+
 <img width="854" height="517" alt="image" src="https://github.com/user-attachments/assets/76047c95-8f1d-4f95-8f52-88bb2c21da03" />
+
+<br>
 
 
 6.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
@@ -78,6 +84,8 @@ Comprueba que las alertas se hayan creado correctamente:
 ![[Pasted image 20261020220545.png]]
 
 ![[Pasted image 20261020220930.png]]
+
+
 
 7.Dirijete a tu máquina Windows y provoca uno de los eventos de detección de Sysmon 1. Ejecuta este comando en Powershell:
 
