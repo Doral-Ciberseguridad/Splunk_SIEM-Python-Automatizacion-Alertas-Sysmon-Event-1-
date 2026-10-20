@@ -37,7 +37,21 @@ sudo nano splunk_automatizar_creacion_alertas.py
 
 3.Copiar el contenido del archivo.py de este repositorio y pegarlo dentro. Guardar cambios con Ctrl+X.
 
-4.Ejecutar el script python:
+
+4.Cambiar y ajustar el contenido de estas variables:
+
+USERNAME: usuario de Splunk. Ej.: "admin"
+PASSWORD: contraseña del usuario de Splunk.
+EMAIL: correo que recibirá las alertas. 
+(Debes tener configurado previamente el envio de correos por SMTP en los ajustes de tu Splunk Server)
+HOST: dirección del servidor Splunk. Ej.: "localhost"
+PORT: puerto de la API de Splunk. Ej.: 8089
+OWNER: propietario de las alertas. Ej.: "admin"
+APP: aplicación de Splunk donde se guardarán las alertas. Ej.: "search"
+SHARING: ámbito de acceso a las alertas. Ej.: "user"
+
+
+5.Ejecutar el script python:
 
 ```
 python splunk_automatizar_creacion_alertas.py
@@ -47,14 +61,20 @@ El script registra en Splunk las reglas de detección y sus consultas SPL como a
 
 ![[Pasted image 20261020224618.png]]
 
-5.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
+6.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
 Comprueba que las alertas se hayan creado correctamente:
 
 ![[Pasted image 20261020220545.png]]
 
 ![[Pasted image 20261020220930.png]]
 
-6.Provoca
+7.Dirijete a tu máquina Windows y provoca uno de los eventos de detección de Sysmon 1. Ejecuta este comando en Powershell:
+
+```
+Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine = "$env:windir\Microsoft.NET\Framework\v4.0.30319\RegSvcs.exe"}
+```
+
+Si todo ha salido bien, deberías de recibir una alerta en tu correo electrónico:
 
 <img width="906" height="1147" alt="image" src="https://github.com/user-attachments/assets/4c3cea61-ca3e-454f-8059-11e509bc807f" />
 
