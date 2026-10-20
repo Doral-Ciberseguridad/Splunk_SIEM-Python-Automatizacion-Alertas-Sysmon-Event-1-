@@ -11,7 +11,7 @@ En este PDF teórico selecciono y explico las reglas de detección comunitarias 
 
 **2.splunk-alertas-sysmon1.py**
 
-Este es mi script en Python que automatiza la creación de alertas en Splunk a partir de las consultas SPL definidas en el archivo PDF anterior, configurando su monitorización y el envío de notificaciones por correo electrónico cuando se detectan eventos que coinciden con las reglas.
+Este es mi script en Python que automatiza la creación de alertas en Splunk a partir de las consultas SPL definidas en el archivo PDF anterior, configurando su monitorización y el envío de notificaciones por correo electrónico cuando se detectan eventos que coinciden con las reglas. He explicado cada parte del código con un comentario.
 
 Pasos para ejecutar este script en Splunk Server:
 
