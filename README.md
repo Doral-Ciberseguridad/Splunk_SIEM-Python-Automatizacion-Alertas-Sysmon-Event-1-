@@ -63,9 +63,14 @@ sudo nano splunk_automatizar_creacion_alertas.py
 python splunk_automatizar_creacion_alertas.py
 ```
 
-El script registra en Splunk las reglas de detección y sus consultas SPL como alertas individuales, automatizando su creación y configuración:
+Verás como empieza a añadir las alertas a Splunk una por una progresivamente:
 
-![[Pasted image 20261020224618.png]]
+<img width="858" height="670" alt="image" src="https://github.com/user-attachments/assets/bc7d71fe-52f0-4fc0-98a2-31349ab0c042" />
+
+<img width="898" height="638" alt="image" src="https://github.com/user-attachments/assets/23f298be-23c1-415e-83f9-371a0d979a8b" />
+
+<img width="854" height="517" alt="image" src="https://github.com/user-attachments/assets/76047c95-8f1d-4f95-8f52-88bb2c21da03" />
+
 
 6.Dirigete a > Splunk Server > Search & Reporting > Settings > Searches, Reports, and Alerts
 Comprueba que las alertas se hayan creado correctamente:
@@ -80,7 +85,7 @@ Comprueba que las alertas se hayan creado correctamente:
 Invoke-CimMethod -ClassName Win32_Process -MethodName Create -Arguments @{CommandLine = "$env:windir\Microsoft.NET\Framework\v4.0.30319\RegSvcs.exe"}
 ```
 
-Si todo ha salido bien, deberías de recibir una alerta en tu correo electrónico:
+Si todo ha salido bien, deberías de recibir una alerta por correo electrónico:
 
 <img width="906" height="1147" alt="image" src="https://github.com/user-attachments/assets/4c3cea61-ca3e-454f-8059-11e509bc807f" />
 
