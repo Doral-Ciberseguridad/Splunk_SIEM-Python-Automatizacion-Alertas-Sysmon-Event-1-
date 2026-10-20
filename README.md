@@ -91,6 +91,7 @@ Comprueba que las alertas se hayan creado correctamente:
 
 
 
+<br>
 
 7.Dirijete a tu máquina Windows y provoca uno de los eventos de detección de Sysmon 1. Ejecuta este comando en Powershell:
 
