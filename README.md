@@ -100,3 +100,5 @@ Si todo ha salido bien, deberías de recibir una alerta por correo electrónico:
 
 <img width="906" height="1147" alt="image" src="https://github.com/user-attachments/assets/4c3cea61-ca3e-454f-8059-11e509bc807f" />
 
+Si no recibes ninguna alerta, asegurate bien de tener Sysmon habilitado y configurado en tu agente Windows.
+
