@@ -105,3 +105,70 @@ Si todo ha salido bien, deberías de recibir una alerta por correo electrónico:
 
 Si no recibes ninguna alerta, asegurate bien de tener Sysmon habilitado y configurado en tu agente Windows.
 
+También asegurate de tener las macros instaladas en Splunk Server:
+
+```bash
+# 1. Descargar Splunk Security Content
+git clone --depth 1 https://github.com/splunk/security_content.git
+
+# 2. Entrar en el repositorio y comprobar las macros
+cd ~/Downloads/security_content
+ls macros | head
+
+# 3. Instalar las dependencias para entornos virtuales
+sudo apt update
+sudo apt install python3.14-venv -y
+
+# 4. Crear el entorno virtual e instalar contentctl-ng
+cd ~/Downloads/security_content
+python3 -m venv .venv
+source .venv/bin/activate
+pip install contentctl-ng
+
+# 5. Construir la aplicación de Security Content
+cd ~/Downloads/security_content
+source .venv/bin/activate
+contentctl-ng build
+
+# 6. Instalar la aplicación generada en Splunk
+sudo /opt/splunk/bin/splunk install app /home/splunkserver/Downloads/security_content/dist/DA-ESS-ContentUpdate.tar.gz
+
+# 7. Reiniciar Splunk
+sudo /opt/splunk/bin/splunk restart --run-as-root
+
+# 8. Comprobar la macro principal de Security Content
+# Ejecutar en Search & Reporting:
+# | rest /servicesNS/-/DA-ESS-ContentUpdate/admin/macros
+# | search title="security_content_summariesonly"
+# | table title
+
+# 9. Comprobar las macros auxiliares
+# Ejecutar en Search & Reporting:
+# | rest /servicesNS/-/DA-ESS-ContentUpdate/admin/macros
+# | search title IN ("summariesonly_config","oldsummaries_config","fillnull_config")
+# | table title
+
+# 10. Descargar Splunk Common Information Model (CIM)
+cd ~/Downloads
+wget -O splunk-common-information-model-cim_850.tgz "https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-common-information-model-cim_850.tgz"
+
+# 11. Instalar CIM
+sudo /opt/splunk/bin/splunk install app /home/splunkserver/Downloads/splunk-common-information-model-cim_850.tgz
+
+# 12. Reiniciar Splunk
+sudo /opt/splunk/bin/splunk restart --run-as-root
+
+# 13. Comprobar que CIM está instalado
+ls -d /opt/splunk/etc/apps/Splunk_SA_CIM
+
+# 14. Descargar el complemento de Sysmon
+cd ~/Downloads
+wget -O Splunk_TA_microsoft_sysmon.tgz "https://attack-range-appbinaries.s3.us-west-2.amazonaws.com/splunk-add-on-for-sysmon_500.tgz"
+
+# 15. Comprobar si el complemento de Sysmon está instalado
+sudo /opt/splunk/bin/splunk list app | grep -i sysmon
+```
+Esto es necesario para que las macros utilizadas por las consultas SPL de las reglas de detección estén disponibles en Splunk y puedan ejecutarse correctamente.
+
+
+
