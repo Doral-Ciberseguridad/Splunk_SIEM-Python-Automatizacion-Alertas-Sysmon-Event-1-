@@ -41,13 +41,21 @@ sudo nano splunk_automatizar_creacion_alertas.py
 4.Cambiar y ajustar el contenido de estas variables:
 
 USERNAME: usuario de Splunk. Ej.: "admin"
+
 PASSWORD: contraseña del usuario de Splunk.
+
 EMAIL: correo que recibirá las alertas. 
+
 (Debes tener configurado previamente el envio de correos por SMTP en los ajustes de tu Splunk Server)
+
 HOST: dirección del servidor Splunk. Ej.: "localhost"
+
 PORT: puerto de la API de Splunk. Ej.: 8089
+
 OWNER: propietario de las alertas. Ej.: "admin"
+
 APP: aplicación de Splunk donde se guardarán las alertas. Ej.: "search"
+
 SHARING: ámbito de acceso a las alertas. Ej.: "user"
 
 
