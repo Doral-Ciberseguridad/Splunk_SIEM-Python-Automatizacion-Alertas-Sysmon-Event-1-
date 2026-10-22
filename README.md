@@ -171,7 +171,7 @@ sudo /opt/splunk/bin/splunk list app | grep -i sysmon
 Esto es necesario para que las macros utilizadas por las consultas SPL de las reglas de detección estén disponibles en Splunk y puedan ejecutarse correctamente.
 
 
-8.Si después de ejecutar el script ves que el servidor se satura mucho y tiene problemas de salud, ejecuta este comando para borrar todas las alertas de Splunk:
+8.Si después de ejecutar el script ves que el servidor se satura mucho y tiene problemas de rendimiento, ejecuta este comando para borrar todas las alertas de Splunk:
 
 ```
 ~/splunk-venv/bin/python -c 'import getpass,splunklib.client as c; s=c.connect(host="localhost",port=8089,username=input("Usuario Splunk: "),password=getpass.getpass("Contraseña: "),app="search",owner="admin"); a=[x for x in s.saved_searches if x.content.get("is_scheduled")=="1" and x.content.get("is_visible")=="1" and x.content.get("actions","").strip()]; print("\n".join(x.name for x in a)); print(f"\nTotal: {len(a)}"); ok=input("Escribe BORRAR TODO para confirmar: "); n=0
